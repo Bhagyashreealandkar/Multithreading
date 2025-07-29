@@ -37,6 +37,8 @@ public class CreateThreadExample3 {
 		t2.start();
 
 		System.out.println("Main thread ended");
+		//both the obj accessing from the samememomry as its hashcode is printing same memory
+
 
 	}
 
