@@ -1,6 +1,8 @@
 package createThread;
 
 public class CreateThreadExample3 {
+	
+	public static Object sharedObj = new Object(); 
 	public static void main(String[] args) {
 
 		System.out.println("Main thread Started");
@@ -9,6 +11,7 @@ public class CreateThreadExample3 {
 			System.out.println("Thread 1 started");
 			System.out.println(Thread.currentThread().getName());
 			System.out.println(Thread.currentThread().getState());
+			System.out.println(sharedObj.hashCode());
 
 			try {
 				Thread.sleep(2000);
@@ -22,6 +25,8 @@ public class CreateThreadExample3 {
 			System.out.println("Thread 2 started");
 			System.out.println(Thread.currentThread().getName());
 			System.out.println(Thread.currentThread().getState());
+			System.out.println(sharedObj.hashCode());
+
 
 			try {
 				Thread.sleep(2000);
@@ -37,8 +42,8 @@ public class CreateThreadExample3 {
 		t2.start();
 
 		System.out.println("Main thread ended");
+		
 		//both the obj accessing from the samememomry as its hashcode is printing same memory
-
 
 	}
 
